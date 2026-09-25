@@ -301,7 +301,7 @@ class HTMLPurifier_CSSDefinition extends HTMLPurifier_Definition
                     $trusted_max_wh
                 );
 
-        $this->info['aspect-ratio'] = new HTMLPurifier_AttrDef_CSS_Ratio();
+        $this->info['aspect-ratio'] = new HTMLPurifier_AttrDef_CSS_AspectRatio();
 
         // text-decoration and related shorthands
         $this->info['text-decoration'] = new HTMLPurifier_AttrDef_CSS_TextDecoration();

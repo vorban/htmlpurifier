@@ -19,16 +19,9 @@ class HTMLPurifier_AttrDef_CSS_RatioTest extends HTMLPurifier_AttrDefHarness
         $this->assertDef('1/', false);
         $this->assertDef('asdf', false);
 
-        $this->assertDef('auto');
-        $this->assertDef('AUTO', 'auto');
-        $this->assertDef('auto 1/2');
-        $this->assertDef('1/2 auto');
-        $this->assertDef('auto 1 / 2', 'auto 1/2');
-        $this->assertDef('1 / 2 auto', '1/2 auto');
-
-        $this->assertDef('auto1/2', false);
-        $this->assertDef('1/2auto', false);
-        $this->assertDef('auto auto', false);
+        // auto is aspect-ratio syntax, not <ratio> syntax
+        $this->assertDef('auto', false);
+        $this->assertDef('auto 1/2', false);
     }
 }
 
